@@ -6,7 +6,7 @@ const Create = () => {
     const [task, setTask] = useState('');
 
     const createTask = () => {
-        axios.post('http://localhost:5003/add', { task: task.trim() })
+        axios.post('http://98.93.210.140:5003/add', { task: task.trim() })
             .then(result => {
                 console.log(result.data);
                 window.location.reload();

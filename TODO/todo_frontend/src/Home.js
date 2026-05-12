@@ -10,13 +10,13 @@ const Home = () => {
     const [taskid, setTaskid] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:5003/get')
+        axios.get('http://98.93.210.140:5003/get')
             .then(result => setTodos(result.data))
             .catch(err => console.log(err));
     }, []);
 
     const edit = (id) => {
-        axios.put(`http://localhost:5003/edit/${id}`)
+        axios.put(`http://98.93.210.140:5003/edit/${id}`)
             .then(result => {
                 console.log(result.data);
                 const updatedTodos = todos.map(todo => {
@@ -31,7 +31,7 @@ const Home = () => {
     };
 
     const Update = (id, updatedTask) => {
-        axios.put(`http://localhost:5003/update/${id}`, { task: updatedTask })
+        axios.put(`http://98.93.210.140:5003/update/${id}`, { task: updatedTask })
             .then(result => {
                 console.log(result.data);
                 const updatedTodos = todos.map(todo => {
@@ -49,7 +49,7 @@ const Home = () => {
     };
 
     const Hdelete = (id) => {
-        axios.delete(`http://localhost:5003/delete/${id}`)
+        axios.delete(`http://98.93.210.140:5003/delete/${id}`)
             .then(result => {
                 console.log(result.data);
                 const updatedTodos = todos.filter(todo => todo._id !== id);
